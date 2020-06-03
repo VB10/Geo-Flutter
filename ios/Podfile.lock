@@ -1,5 +1,17 @@
 PODS:
+  - activity_recognition_flutter (0.0.1):
+    - Flutter
+  - app_usage (0.0.1):
+    - Flutter
   - background_locator (0.0.1):
+    - Flutter
+  - battery (0.0.1):
+    - Flutter
+  - carp_mobile_sensing (0.0.1):
+    - Flutter
+  - device_apps (0.0.1):
+    - Flutter
+  - device_info (0.0.1):
     - Flutter
   - Flutter (1.0.0)
   - flutter_geofence (0.1.1):
@@ -10,24 +22,78 @@ PODS:
     - Flutter
   - google_api_availability (2.0.4):
     - Flutter
+  - light (0.0.1):
+    - Flutter
   - location_permissions (2.0.5):
+    - Flutter
+  - package_info (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+  - path_provider_linux (0.0.1):
+    - Flutter
+  - path_provider_macos (0.0.1):
+    - Flutter
+  - pedometer (0.0.1):
+    - Flutter
+  - "permission_handler (5.0.0+hotfix.8)":
+    - Flutter
+  - screen_state (0.0.1):
+    - Flutter
+  - sensors (0.0.1):
+    - Flutter
+  - shared_preferences (0.0.1):
+    - Flutter
+  - shared_preferences_macos (0.0.1):
+    - Flutter
+  - shared_preferences_web (0.0.1):
     - Flutter
   - workmanager (0.0.1):
     - Flutter
 
 DEPENDENCIES:
+  - activity_recognition_flutter (from `.symlinks/plugins/activity_recognition_flutter/ios`)
+  - app_usage (from `.symlinks/plugins/app_usage/ios`)
   - background_locator (from `.symlinks/plugins/background_locator/ios`)
+  - battery (from `.symlinks/plugins/battery/ios`)
+  - carp_mobile_sensing (from `.symlinks/plugins/carp_mobile_sensing/ios`)
+  - device_apps (from `.symlinks/plugins/device_apps/ios`)
+  - device_info (from `.symlinks/plugins/device_info/ios`)
   - Flutter (from `Flutter`)
   - flutter_geofence (from `.symlinks/plugins/flutter_geofence/ios`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - geolocator (from `.symlinks/plugins/geolocator/ios`)
   - google_api_availability (from `.symlinks/plugins/google_api_availability/ios`)
+  - light (from `.symlinks/plugins/light/ios`)
   - location_permissions (from `.symlinks/plugins/location_permissions/ios`)
+  - package_info (from `.symlinks/plugins/package_info/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - path_provider_linux (from `.symlinks/plugins/path_provider_linux/ios`)
+  - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
+  - pedometer (from `.symlinks/plugins/pedometer/ios`)
+  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
+  - screen_state (from `.symlinks/plugins/screen_state/ios`)
+  - sensors (from `.symlinks/plugins/sensors/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - shared_preferences_macos (from `.symlinks/plugins/shared_preferences_macos/ios`)
+  - shared_preferences_web (from `.symlinks/plugins/shared_preferences_web/ios`)
   - workmanager (from `.symlinks/plugins/workmanager/ios`)
 
 EXTERNAL SOURCES:
+  activity_recognition_flutter:
+    :path: ".symlinks/plugins/activity_recognition_flutter/ios"
+  app_usage:
+    :path: ".symlinks/plugins/app_usage/ios"
   background_locator:
     :path: ".symlinks/plugins/background_locator/ios"
+  battery:
+    :path: ".symlinks/plugins/battery/ios"
+  carp_mobile_sensing:
+    :path: ".symlinks/plugins/carp_mobile_sensing/ios"
+  device_apps:
+    :path: ".symlinks/plugins/device_apps/ios"
+  device_info:
+    :path: ".symlinks/plugins/device_info/ios"
   Flutter:
     :path: Flutter
   flutter_geofence:
@@ -38,19 +104,61 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/geolocator/ios"
   google_api_availability:
     :path: ".symlinks/plugins/google_api_availability/ios"
+  light:
+    :path: ".symlinks/plugins/light/ios"
   location_permissions:
     :path: ".symlinks/plugins/location_permissions/ios"
+  package_info:
+    :path: ".symlinks/plugins/package_info/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  path_provider_linux:
+    :path: ".symlinks/plugins/path_provider_linux/ios"
+  path_provider_macos:
+    :path: ".symlinks/plugins/path_provider_macos/ios"
+  pedometer:
+    :path: ".symlinks/plugins/pedometer/ios"
+  permission_handler:
+    :path: ".symlinks/plugins/permission_handler/ios"
+  screen_state:
+    :path: ".symlinks/plugins/screen_state/ios"
+  sensors:
+    :path: ".symlinks/plugins/sensors/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  shared_preferences_macos:
+    :path: ".symlinks/plugins/shared_preferences_macos/ios"
+  shared_preferences_web:
+    :path: ".symlinks/plugins/shared_preferences_web/ios"
   workmanager:
     :path: ".symlinks/plugins/workmanager/ios"
 
 SPEC CHECKSUMS:
+  activity_recognition_flutter: 5d202d7d37958136b0fbe0c982ab1b630c309579
+  app_usage: ed15bdc1038a81a0a7a97c8a506c7f316ad52d08
   background_locator: fe84072e5be02da3e28a3bbca81293d6c7443df7
+  battery: 6b19dafdbba590f03b1f0cd2f1224e3ffedadbe6
+  carp_mobile_sensing: cba779bfa77cc3fc286d79c402b3f189483fc274
+  device_apps: 099590c646da044f7f410fef63229fc0aedb35a8
+  device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_geofence: 08e5427c56c540ffac97425b8e10dd598912fb3d
   flutter_local_notifications: 9e4738ce2471c5af910d961a6b7eadcf57c50186
   geolocator: 460cc8e850b616f8c0e90944c86517d91ccbb686
   google_api_availability: 15fa42a8cd83c0a6738507ffe6e87096f12abcb8
+  light: de3005d4a28e645dc1b38162f93c457f15ea5e05
   location_permissions: 4a49d4e5bec5b653643e551ab77963cc99bb0e4a
+  package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
+  path_provider_linux: 4d630dc393e1f20364f3e3b4a2ff41d9674a84e4
+  path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
+  pedometer: e27471953eabc0ceed97e4828c0bccf91d179d86
+  permission_handler: c2a19c5cb3ed2d7054fc4baa8ff1b86f5dcfedfd
+  screen_state: 7a9b36a44cb03f709ce74f285c32e593f2ef9921
+  sensors: 84eb7a30e47a649e4172b71d6e81be614c280336
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  shared_preferences_macos: f3f29b71ccbb56bf40c9dd6396c9acf15e214087
+  shared_preferences_web: 141cce0c3ed1a1c5bf2a0e44f52d31eeb66e5ea9
   workmanager: ffff78bf18495e2bc5b8c955ead94a81db340681
 
 PODFILE CHECKSUM: f45d293502bdcca725aca7bc62af43ad173e1292

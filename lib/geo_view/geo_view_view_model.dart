@@ -1,11 +1,9 @@
-import 'package:carp_context_package/context.dart';
 import 'package:flutter_geofence/geofence.dart';
 import 'package:geolocator/geolocator.dart';
 
 import 'geo_view.dart';
 import 'package:flutter/material.dart';
-import 'package:carp_mobile_sensing/carp_mobile_sensing.dart';
-import 'package:carp_context_package/context.dart';
+
 import 'notification/local_notification.dart' as notif;
 
 // import 'package:flutter_background_geolocation/flutter_background_geolocation.dart'
@@ -22,8 +20,6 @@ abstract class GeoViewViewModel extends State<GeoView> {
     super.initState();
 
     // Study().adapt(schema)
-
-    SamplingPackageRegistry.register(ContextSamplingPackage());
 
     // ContextSamplingPackage().
 

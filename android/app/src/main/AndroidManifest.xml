@@ -8,6 +8,8 @@
 
          <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="Sample"
@@ -47,5 +49,10 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+            <receiver android:name="com.intivoto.geofence.GeofenceBroadcastReceiver"
+    android:enabled="true" android:exported="true"/>
+<service android:name="com.intivoto.geofence.GeofencePlugin"
+    android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true"/>
     </application>
 </manifest>

@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_geofence/geofence.dart';
+import 'package:geolocator/geolocator.dart';
 
 class MyApp2 extends StatefulWidget {
   @override
@@ -39,10 +40,13 @@ class _MyAppState extends State<MyApp2> {
     if (!mounted) return;
     Geofence.initialize();
     Geofence.startListening(GeolocationEvent.entry, (entry) {
+      print("XX ${entry.id}");
       scheduleNotification("Entry of a georegion", "Welcome to: ${entry.id}");
     });
 
     Geofence.startListening(GeolocationEvent.exit, (entry) {
+      print(entry.id);
+
       scheduleNotification("Exit of a georegion", "Byebye to: ${entry.id}");
     });
 
@@ -59,24 +63,7 @@ class _MyAppState extends State<MyApp2> {
         body: ListView(
           children: <Widget>[
             Text('Running on: $_platformVersion\n'),
-            RaisedButton(
-              child: Text("Add region"),
-              onPressed: () {
-                Geolocation location = Geolocation(
-                    latitude: 50.853410,
-                    longitude: 3.354470,
-                    radius: 50.0,
-                    id: "Kerkplein13");
-                Geofence.addGeolocation(location, GeolocationEvent.entry)
-                    .then((onValue) {
-                  print("great success");
-                  scheduleNotification(
-                      "Georegion added", "Your geofence has been added!");
-                }).catchError((onError) {
-                  print("great failure");
-                });
-              },
-            ),
+            buildRaisedButton,
             RaisedButton(
               child: Text("Request Permissions"),
               onPressed: () {
@@ -94,6 +81,36 @@ class _MyAppState extends State<MyApp2> {
           ],
         ),
       ),
+    );
+  }
+
+  RaisedButton get buildRaisedButton {
+    return RaisedButton(
+      child: Text("Add region"),
+      onPressed: () async {
+        final position = await Geolocator().getCurrentPosition();
+
+        // Geolocation location = Geolocation(
+        //     latitude: 50.853410,
+        //     longitude: 3.354470,
+        //     radius: 50.0,
+        //     id: "Kerkplein13");
+        print(position.latitude);
+        print(position.longitude);
+        Geofence.addGeolocation(
+                Geolocation(
+                    radius: 50,
+                    id: "vb home2",
+                    latitude: position.latitude,
+                    longitude: position.longitude),
+                GeolocationEvent.entry)
+            .then((onValue) {
+          print("great success");
+          scheduleNotification("VB HOME", "Your geofence has been added!");
+        }).catchError((onError) {
+          print("great failure");
+        });
+      },
     );
   }
 
