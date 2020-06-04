@@ -102,6 +102,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.4"
+  geofencing:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "1da08412ed6b5fac2a794e273f651b72c5783e4e"
+      url: "https://github.com/bkonyi/FlutterGeofencing"
+    source: git
+    version: "0.0.1"
   geolocator:
     dependency: "direct main"
     description:

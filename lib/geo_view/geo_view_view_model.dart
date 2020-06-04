@@ -31,20 +31,33 @@ abstract class GeoViewViewModel extends State<GeoView> {
     // initPlatformState();
     // startLocationService();
 
-    // Geofence.
-    // Geofence.requestPermissions();
-    // Geofence.getCurrentLocation().then((coordinate) {
-    //   print(
-    //       "Your latitude is ${coordinate.latitude} and longitude ${coordinate.longitude}");
-    // });
+    Geofence.initialize();
+    Geofence.requestPermissions();
+    Geofence.startListening(GeolocationEvent.entry, (foo) {
+      print("OK");
+      notif.Notification notification = notif.Notification();
+      notification.showNotificationWithoutSound(
+          Position(latitude: foo.latitude, longitude: foo.longitude));
+    });
 
-    // Geofence.startListening(GeolocationEvent.entry, (entry) {
-    //   print(entry.latitude);
-    //   notif.Notification notification = notif.Notification();
-    //   notification.showNotificationWithoutSound(
-    //       Position(latitude: entry.latitude, longitude: entry.longitude));
-    //   // scheduleNotification("Entry of a georegion", "Welcome to: ${entry.id}");
-    // });
+    Geofence.startListening(GeolocationEvent.exit, (foo) {
+      print("OK");
+      notif.Notification notification = notif.Notification();
+      notification.showNotificationWithoutSound(
+          Position(latitude: foo.latitude, longitude: foo.longitude));
+    });
+    Geofence.getCurrentLocation().then((coordinate) {
+      print(
+          "Your latitude is ${coordinate.latitude} and longitude ${coordinate.longitude}");
+    });
+
+    Geofence.startListening(GeolocationEvent.entry, (entry) {
+      print(entry.latitude);
+      // notif.Notification notification = notif.Notification();
+      // notification.showNotificationWithoutSound(
+      //     Position(latitude: entry.latitude, longitude: entry.longitude));
+      // scheduleNotification("Entry of a georegion", "Welcome to: ${entry.id}");
+    });
     // Geolocator().checkGeolocationPermissionStatus();
 
     // Workmanager.initialize(
@@ -58,24 +71,41 @@ abstract class GeoViewViewModel extends State<GeoView> {
     //   fetchBackground,
     //   frequency: Duration(minutes: 5),
     // );
-    // Geolocator()
-    //     .checkGeolocationPermissionStatus(
-    //         locationPermission: GeolocationPermission.locationAlways)
-    //     .then((value) {
-    //   print(value);
-    // });
+    Geolocator()
+        .checkGeolocationPermissionStatus(
+            locationPermission: GeolocationPermission.locationAlways)
+        .then((value) {
+      print(value);
+    });
     // //  Geolocator().
-    // Geolocator()
-    //     .getPositionStream(
-    //         LocationOptions(
-    //             accuracy: LocationAccuracy.high, distanceFilter: 10),
-    //         GeolocationPermission.locationAlways)
-    //     .listen((event) {
-    //   print(event.toString());
-    //   notif.Notification notification = notif.Notification();
-    //   notification.showNotificationWithoutSound(event);
-    // });
+    Geolocator()
+        .getPositionStream(
+            LocationOptions(
+                accuracy: LocationAccuracy.high, distanceFilter: 10),
+            GeolocationPermission.locationAlways)
+        .listen((event) {
+      print(event.toString());
+      notif.Notification notification = notif.Notification();
+      notification.showNotificationWithoutSound(event);
+    });
   }
+}
+
+void addGeoFance() {
+  Geofence.addGeolocation(
+          Geolocation(
+            id: "VBHOME",
+            latitude: 40.9184,
+            longitude: 29.2205,
+            radius: 150,
+          ),
+          GeolocationEvent.entry)
+      .then((onValue) {
+    print("ADDED");
+    // scheduleNotification("Georegion added", "Your geofence has been added!");
+  }).catchError((error) {
+    print("failed with $error");
+  });
 }
 
 void geoFance() {

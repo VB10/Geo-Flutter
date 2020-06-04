@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp2> {
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
-    if (!mounted) return;
+    // if (!mounted) return;
     Geofence.initialize();
     Geofence.startListening(GeolocationEvent.entry, (entry) {
       print("XX ${entry.id}");
@@ -90,19 +90,14 @@ class _MyAppState extends State<MyApp2> {
       onPressed: () async {
         final position = await Geolocator().getCurrentPosition();
 
-        // Geolocation location = Geolocation(
-        //     latitude: 50.853410,
-        //     longitude: 3.354470,
-        //     radius: 50.0,
-        //     id: "Kerkplein13");
         print(position.latitude);
         print(position.longitude);
         Geofence.addGeolocation(
                 Geolocation(
-                    radius: 50,
-                    id: "vb home2",
-                    latitude: position.latitude,
-                    longitude: position.longitude),
+                    radius: 500,
+                    id: "vb home22",
+                    latitude: 40.914814,
+                    longitude: 29.2205),
                 GeolocationEvent.entry)
             .then((onValue) {
           print("great success");
